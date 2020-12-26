@@ -1,0 +1,79 @@
+\documentclass[11pt, oneside]{article} 
+\usepackage{geometry}
+\geometry{letterpaper} 
+\usepackage{graphicx}
+	
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{hyperref}
+
+\graphicspath{{/Users/telliott/Github/figures/}}
+% \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
+
+\title{Cycloid area}
+\date{}
+
+\begin{document}
+\maketitle
+\Large
+
+%[my-super-duper-separator]
+
+We imagine a bicycle with one tire marked at a particular point on the rim, say with fluorescent paint or a small light.  Time starts at $t = 0$ with that point $P$ in contact with the $x$ axis at $(0,0)$.  Then we start rolling the bike.  As the tire rotates our fixed point $P$ on the rim traces a curve called the cycloid.
+\begin{center} \includegraphics [scale=0.6] {cycloid.png} \end{center}
+
+We want to find equations that give the position of the point $P$ as a function of time.  
+\begin{center} \includegraphics [scale=0.5] {cycloid2.png} \end{center}
+
+It turns out that there is no simple expression for $y$ in terms of $x$.  However, there is a fairly simple \emph{parametrization} of the curve, yielding parametric equations $x(t)$, $y(t)$ (or $\theta$ as labeled in the diagram).
+
+The unusual thing is that we will designate $t = 0$ as being the time when the point $P$ is at the bottom, and then the angle increasing in the clockwise direction, opposite to the usual case.  The circle has radius $a$, for the general case.
+
+\begin{center} 
+\includegraphics [scale=0.6] {cycloid2.png}
+\includegraphics [scale=0.4] {cycloid3.png} 
+\end{center}
+
+It's a bit tricky to think about, but the equations for both $y$ and $x$ as a function of $t$ have two terms.  $y$ is easier.  The distance of point $P$ above the $x-$axis is the radius of the circle, \emph{minus} the length shown in the right panel as $a \cos t$.
+\[ y = a - a \cos t \]
+
+The distance of the center of the circle from the $y-$ axis is $at$, the distance along the arc of the circle from $P$ to the point currently on the bottom.  But we must account for the distance of $P$ left or right of the center, which is $- a \sin t$.  Thus:
+\[ x = at - a \sin t \]
+
+Now, going back to the original diagram, the area under the curve is just the integral of $y$.
+\begin{center} \includegraphics [scale=0.6] {cycloid.png} \end{center}
+
+That is
+\[ A = \int y \ dx \]
+But we change variables to $t$.  What is $dx$?  $dx = (a - a \cos t) \ dt$.
+\[ A = \int (a - a \cos t) (a - a \cos t) \ dt \]
+\[ A = a^2 \int (1 - \cos t)^2 \ dt \]
+
+The bounds on the integral are given by the fact that we want one complete revolution of the circle.
+\[ A = a^2 \int_0^{2 \pi} (1 - \cos t)^2 \ dt \]
+
+That will give a nice simplification, since any simple trigonometric function gives an integral of zero over that range.  Let's see
+
+\[ (1 - \cos t)^2 = 1 - 2 \cos t + \cos^2 t \]
+
+We will need antiderivatives.  The first two are easy, but what about $\cos^2$?
+
+Recall the product rule:  $(uv)' = u'v + uv'$.  If you play around with various products, you will encounter:
+\[ \frac{d}{dx} \sin x \cos x = \cos^2 x - \sin^2 x = 2 \cos^2 x - 1 \]
+From this we can rearrange and integrate to obtain:
+\[ 2 \int \cos^2 x \ dx = x + \sin x \cos x \]
+
+Putting it all together we have:
+\[ A = a^2 \int_0^{2 \pi} (1 - \cos t)^2 \ dt \]
+\[ = a^2  \ [ \ t - 2 \sin t + \frac{1}{2}(t + \sin t \cos t) \bigg |_0^{2 \pi} \ ] \]
+
+Those terms with $\sin$ and $\cos$ are just zero over the period $2 \pi$.  That leaves
+\[ A = a^2 \ \frac{3}{2} t \bigg |_0^{2 \pi} = 3 \pi a^2 \]
+
+A simple, beautiful answer.
+\begin{center} \includegraphics [scale=0.25] {cycloid4.png} \end{center}
+In this figure, the radius is $R$, so the circle is $\pi R^2$.  We pick up two copies of $(1/2) \pi R \cdot 2R$ which gives us a total of $3 \pi R^2$.
+
+\end{document}
