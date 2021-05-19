@@ -8,8 +8,8 @@
 \usepackage{parskip}
 \usepackage{color}
 %\usepackage{hyperref}
-\usepackage{tocloft}
-\setlength{\cftchapnumwidth}{2.5em}
+%\usepackage{tocloft}
+%\setlength{\cftchapnumwidth}{2.5em}
 
 \PassOptionsToPackage{hyphens}{url}
 \usepackage[hidelinks, 

@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Introduction to the exponential}
@@ -101,7 +101,30 @@ It turns out that if we take the logarithm of $x$ (where $x$ is any number $> 1$
 This is nicely shown by the change of bases formula.
 \[ \log_b x = \frac{\log_a x}{\log_a b} \]
 
-Start with an expression with $b$ as the base:
+I find the derivation of the formula a little bit tricky to remember.  Here are two methods:
+
+\subsection*{first method}
+
+By definition 
+\[ x = b^{\log_b(x)} \]
+
+For a base $b$, the logarithm of $x$ to that base is the power to which we must raise $b$ to obtain $x$.  Now take the logarithm to a different base:
+
+\[ \log_a(x) = \log_a \ [ \  b^{\log_b(x)} \ ]  \]
+Use the rule for exponents on the right-hand side
+\[ \log_a(x) = \log_b(x) \cdot \log_a(b)  \]
+
+And we're done.  Rearranging:
+\[ \log_b(x) = \frac{\log_a(x)}{\log_a(b)} \]
+
+Equally
+\[ \log_a(x) = \frac{\log_b(x)}{\log_b(a)} \]
+So
+\[ \log_a(b) = \frac{1}{\log_b(a)} \]
+
+\subsection*{second method}
+
+Write this expression with $b$ as the base:
 \[ y = b^x \]
 and by the definition of the logarithm
 \[ x = \log_b y \]
@@ -120,22 +143,13 @@ $y$ can be any value, so replace it by $x$
 Rearranging:
 \[ \log_b x = \frac{\log_a x}{\log_a b} \]
 
-One way I remember this is that first the logarithms to different bases are connected by some constant $k$
-\[ \log_b x = k \log_a x \]
-and we substitute for $k$ the inverse of the log to the \emph{same} base as we have in the numerator:
-\[ \log_b x = \frac{\log_a x}{\log_a b} \]
-that is, I remember that we want $\log_a$ something \emph{over }$\log_a$ something on the right. 
+Actually they are the same method.  It's a bit cleaner in the second one, because we have the second variable $y$ to avoid confusion.  But ... I find the second method more confusing to recall from memory.
 
-Alternatively, you might look at the other formula
-\[ \log_a x = \log_a b \log_b x  \]
+One way to remember this is to say, okay, the logarithms to different bases must be connected by some constant $k$
+\[ \log_b x =  \frac{\log_a x}{k} \]
+\[ =  \frac{\log_a x}{\log_a(b)} \]
+
 and imagine the $b$'s canceling in some way.
-
-One other thing we can do is to set $x=a$ in the above formula.  We start from
-\[ \log_b x = \frac{\log_a x}{\log_a b} \]
-then with $x=a$
-\[ \log_b a = \frac{\log_a a}{\log_a b} \]
-but $\log_a a = 1$ so
-\[ \log_b a = \frac{1}{\log_a b} \]
 
 And that makes perfect sense.  If we multiply by some factor $k$ to convert from the logarithm in base $a$ to base $b$, we must multiply by the inverse of the same factor to convert back again.
 

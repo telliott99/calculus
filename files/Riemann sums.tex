@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-Math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 %break
@@ -42,7 +42,25 @@ Another way to see this is to look at this diagram from Newton's book \emph{De A
 
 Newton's argument is that if we draw a box as illustrated, there must be one height, one point along the top of the rectangle where the area under the curve but not in the box, to the right, is exactly equal to the area over the curve and in the box, to the left.  At that point, the errors exactly cancel.
 
-If this point is always bounded by the $y$-values of the left and right sides of the box, then as the boxes get smaller and smaller, the balance point will always be included somewhere in the rectangle, so the answer will come out exactly right.  (This latter assumption breaks down at maxima and minima, but only for finite boxes.  Let's admire the diagram and move on to the actual method).
+If this point is always bounded by the $y$-values of the left and right sides of the box, then as the boxes get smaller and smaller, the balance point will always be included somewhere in the rectangle, so the answer will come out exactly right.  (This latter assumption breaks down at maxima and minima, but only for finite boxes).
+
+In his book \emph{Infinite Powers} Strogatz says that Leibnitz came up with the method we'll introduce as Riemann sums, by analogy with another problem that had been set for him by Huygens, which he solved with a "telescoping series."
+
+The problem is to sum:
+
+\[ \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \dots + \frac{1}{n \cdot (n + 1)} \]
+
+Leibnitz' insight is to see that each term can be re-written as a difference, for example
+\[ \frac{1}{3 \cdot 4} = \frac{1}{3} - \frac{1}{4} \]
+
+So then when we look at the whole series we have
+\[ (\frac{1}{1} - \frac{1}{2}) + (\frac{1}{2} - \frac{1}{3}) + (\frac{1}{3} - \frac{1}{4}) + \dots + (\frac{1}{n} - \frac{1}{n+1}) \]
+
+All terms except the first and last cancel, since for every term with a minus sign, the next one is the same but with a plus sign and we have
+
+\[ \frac{1}{1} - \frac{1}{n+1} \]
+
+which, as $n$ gets large, approaches a limiting value of $1$.
 
 \subsection*{example}
 

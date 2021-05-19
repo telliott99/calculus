@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 %break
@@ -71,5 +71,65 @@ The bottom line is that we want $dy$ and $dx$ to be very small compared to $y$ a
 Effectively what limits and neighborhoods do is to say, OK smart guy, you go first.  Pick $n$.  Then once you've picked $n$ very large, we can always find $dx$ very very small so that $n \cdot dx$ is still small compared with $x$.  That's the whole trick.
 
 However, in practice none of this is a problem because we view $dy$ and $dx$ as very small.  Although often we only care about their ratio, some times we will need to separate them.  This is legal, trust me.
+
+\subsection*{Shankar}
+
+In the first lecture of his first course on Physics, Shankar has this to say about differentials.  We are working with acceleration and velocity in the $x$-direction so we write
+\[ \frac{dv}{dt} = a \]
+
+Now, multiply both sides by $v$ but use $v = dx/dt$ on the right-hand side
+\[ v \frac{dv}{dt} = a \frac{dx}{dt} \]
+
+Shankar says
+
+\begin{quote}
+canceling the $dt$ on both sides gives valid results if interpreted carefully.
+\end{quote}
+
+\[ v \ dv = a \ dx \]
+
+\begin{quote}
+it must be understood that the two sides of a relation like (the above) are to be ultimately integrated between some limits to obtain a useful equality.
+\end{quote}
+
+Thus
+\[ \int_{v_0}^v v \ dv = \int_{x_0}^x a \ dx \]
+\[ v^2 - v_0^2 = 2a(x - x_0) \]
+which is convenient in some cases when we want to know the velocity at a particular position or the converse.
+
+We can check this result with an alternative derivation using the fundamental equation of motion for $x$ as a function of $t$
+\[ x = \frac{1}{2} at^2 + v_0 t + x_0 \]
+\[ x - x_0 = \frac{1}{2} at^2 + v_0 t \]
+
+from which $t$ is removed by the following trick.  
+
+Differentiating, we have $v = at + v_0$ so then $t = (v - v_0)/a$.
+
+Substitute into the original
+
+\[ x - x_0 = \frac{1}{2} a(\frac{v-v_0}{a})^2 + v_0 \frac{v-v_0}{a} \]
+\[ 2a(x - x_0) = (v-v_0)^2 +  2v_0(v-v_0) \]
+\[ = (v - v_0)(v - v_0 + 2v_0) \]
+\[ = v^2 -v_0^2 \]
+
+It should be emphasized that $x$ and $v$ are the values at the identical time.
+
+As an example, suppose we have $a = -10$ m/s$^2$, $v_0 = 10$ m/s, and $x_0 = 15$ m.  At the maximum height, the velocity is zero, so
+
+\[ 2a(x - x_0) = -v_0^2 \]
+\[ 20(x - 15) = 100 \]
+\[ x = 20 \]
+
+Check this result by starting with
+\[ x - x_0 = \frac{1}{2} at^2 + v_0 t \]
+and setting the first derivative equal to zero
+\[ \frac{dx}{dt} = v = 0 = at + v_0 \]
+\[ t = \frac{-10}{-10} = 1 \]
+
+So then
+\[ x = \frac{1}{2} at^2 + v_0 t + x_0 \]
+\[ = -5 + 10 + 15 = 20 \]
+
+
 
 \end{document}

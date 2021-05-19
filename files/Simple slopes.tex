@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-Math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Simple slopes}
@@ -41,7 +41,9 @@ $\circ$ \ velocity is the \textbf{derivative} of the distance with respect to ti
 
 $\circ$ \  distance is the \textbf{integral} of the velocity with respect to time
 
-We can speak of velocity at a particular time $t$, as in "our current velocity is 60 miles per hour."  But the distance, the integral, must be evaluated between appropriate starting and stopping points for the time.
+We can speak of velocity at a particular time $t$, as in "our current velocity is 60 miles per hour."  (We sidestep the paradox that a velocity clearly must reference two different distances and times, even though we may talk about velocity at a \emph{particular} time).
+
+But the distance, the integral, must be evaluated between appropriate starting and stopping points for the time.
 
 In our example, you must first look at your odometer \emph{before} you start on that $3.5$ mile drive, and subtract the initial from the final value.
 
@@ -262,5 +264,36 @@ This rule had already been discovered before Newton.  It's a toss-up whether Fer
 If you already know some calculus you're probably jumping out of your chair while reading this chapter because you've had it pounded into you that $dy/dx$ is not a quotient and believe that you can't simply multiply both sides of the equation by $dx$.
 
 Well, you can.  And I'll explain why as we go along.
+
+\subsection*{example}
+
+Strogatz (in his new book \emph{Infinite Powers}) has a simple example that may shed some light on what we're going to do here.
+
+Suppose we consider the cubic equation $y = x^3$ and evaluate the function at the point $x = 2$ so
+\[ y = x^3 = 2^3 = 8 \]
+
+and then ask what happens when we make a small change in $x$, say by the positive amount $\Delta x = 0.001$ so that $x + \Delta x = 2.001$.
+
+Then multiplying out, we would have that at the new point, the $y$-value is
+\[ (x + \Delta x)^3 = x + 3 x^2 {\Delta x} + 3 x{\Delta x}^2 + {\Delta x}^3 \]
+
+Let's just use a calculator:
+\[ 2.001^3 = 8.012006001 \]
+
+Can you see that 
+\[ x^3 = 8 \]
+\[ 3 x^2 {\Delta x} = 0.012 \]
+\[ 3 x{\Delta x}^2 = 0.000006 \]
+\[ {\Delta x}^3 = 0.000000001 \]
+
+As an approximation, we neglect the terms $3 x{\Delta x}^2 + {\Delta x}^3$ and then the difference between the new $y$ and the original one is simply
+\[  \Delta y = 3 x^2 {\Delta x}  \]
+\[  \frac{\Delta y}{\Delta x}  = 3 x^2 \]
+
+The trick is that if, in your problem, the error terms $3 x{\Delta x}^2 + {\Delta x}^3$ matter to the result you are trying to achieve, what you need to do is make $\Delta x$ smaller, so that perhaps $x + \Delta x = 2.000001$.  The error terms to be neglected will be of the order of $10^{-12}$ and $10^{-18}$.
+
+The error terms become a much smaller fraction of the answer, and so the answer becomes more closely correct.  That's the magic of the differential talking.
+
+
 
 \end{document}
