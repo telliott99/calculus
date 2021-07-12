@@ -82,27 +82,37 @@ In general, any time we have a power of x that is itself a function, we need log
 
 \subsection*{power rule}
 
-An important result is to prove the power rule for all real $x$.  We want
-\[   \frac{d}{dx} x^n \]
+An important result is to prove the power rule for all real exponents $r$.  We want
+\[   \frac{d}{dx} x^r \]
 
-where $n$ is not just a positive or negative integer ($\ne -1$), but can be any real number, like $\pi$ or $e$ or $\sqrt{2}$.  Straight-up implicit differentiation is easier for all but the irrational numbers, but it's a subtle thing to talk about real numbers as the limits of rational numbers.  We combine logarithmic and implicit differentiation
+where $r$ is not just a positive or negative integer ($\ne -1$), but can be any real number, like $\pi$ or $e$ or $\sqrt{2}$.  Straight-up implicit differentiation is easier for all but the irrational numbers, but it's a subtle thing to talk about real numbers as the limits of rational numbers.  We combine logarithmic and implicit differentiation
 
 Write
-\[ y = x^n \]
-\[ \ln y = n \ \ln x \]
+\[ y = x^r \]
+\[ \ln y = r \ \ln x \]
 
 Imagine both $x$ and $y$ as functions of $t$ with $x = t$, then
-\[ \frac{d}{dt} \ \ln y = \frac{d}{dt} \  n \ \ln x \]
+\[ \frac{d}{dt} \ \ln y = \frac{d}{dt} \  r \ \ln x \]
 
-But $n$ is now \emph{just a constant} so
-\[ \frac{d}{dt} \ \ln y =  n \frac{d}{dt} \ \ln x \]
-\[ \frac{1}{y} \ \frac{dy}{dt} = n  \frac{1}{x} \ \frac{dx}{dt} \]
-\[ \frac{1}{y} \ dy = n  \frac{1}{x} \ dx \]
-\[ \frac{dy}{dx} = n  \frac{y}{x} \]
-\[  = n  \frac{x^n}{x} \]
-\[ = n  x^{n-1} \]
+But $r$ is now \emph{just a constant} so
+\[ \frac{d}{dt} \ \ln y =  r \frac{d}{dt} \ \ln x \]
+\[ \frac{1}{y} \ \frac{dy}{dt} = r  \frac{1}{x} \ \frac{dx}{dt} \]
+\[ \frac{1}{y} \ dy = r \frac{1}{x} \ dx \]
+\[ \frac{dy}{dx} = r  \frac{y}{x} \]
+\[  = r  \frac{x^r}{x} \]
+\[ = r  x^{r-1} \]
 
-Did you see what just happened!  We proved the power rule for real $n$ in a few simple lines.  Wow.
+We proved the power rule for real $n$ in a few simple lines.  Wow.
+
+An even simpler way is to use the definition of $\ln x$ to write
+\[ x^r = (e^{\ln x})^r \]
+\[ = e^{r \ln x} \]
+
+Take $d/dx$ of both sides.  For the right-hand side we have that the derivative of an exponential is the exponential, and then by the chain rule plus the product rule, we get additional factors of $r$ and $1/x$:
+
+\[ e^{r \ln x} \cdot \frac{r}{x} \]
+\[ = x^r  \cdot \frac{r}{x} \]
+\[ = r  x^{r-1} \]
 
 \subsection*{example}
 

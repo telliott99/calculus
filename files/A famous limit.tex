@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 %break
@@ -22,15 +22,19 @@
 
 %[my-super-duper-separator]
 
-In this unit, we emphasize trigonometric and exponential functions.  These are called transcendental functions because they "transcend algebra", meaning that they cannot be expressed as finite polynomials.  We will see, however, that they can be expressed as \emph{infinite} polynomials or series.
+In this unit, we emphasize trigonometric and exponential functions.  These are called transcendental functions because they "transcend algebra", meaning that they cannot be expressed as finite polynomials.  
+
+We will see, however, that they can be expressed as \emph{infinite} polynomials or series.
 
 \label{sec:A_famous_limit}
 \subsection*{A famous limit}
 
 The fundamental results of calculus with respect to trigonometric functions depend on the value of this limit
-\[    \lim_{x \rightarrow 0} \ \frac{x}{\sin x}  \]
+\[    \lim_{\theta \rightarrow 0} \ \frac{\sin \theta}{\theta}  \]
 
-The limit of the ratio of the angle to its sine as the angle gets very small is equal to $1$.  One way to explore this is to use a plotting application:
+The limit of the ratio of the sine to the angle itself as the angle gets very small is equal to $1$.  In the limit, this is the slope of the sine curve at $\theta = 0$.
+
+One way to explore this is to use a plotting application:
 
 \begin{center} \includegraphics [scale=0.4] {sinx_over_x.png} \end{center}
 or a calculator such as that embedded in Python
@@ -50,9 +54,9 @@ or a calculator such as that embedded in Python
 
 but these are (to be honest) cheating because when they calculate the sine of the angle they use a shortcut based on calculus.
 
-Here is an actual proof that the ratio is equal to $1$.
+What follows is an actual proof that the ratio is equal to $1$.
 
-About notation:  in the section above we used $x$ as the variable name for an angle.  Historically, of course, Greek letters were favored:  $\theta$, $\phi$ and so on.  I use these occasionally, but most frequently I use $s$ or both $s$ and $t$.  I prefer them because I feel like $\theta$ takes me a moment longer to process each time I see it than $t$ does.  Perhaps more important, $t$ is a bit easier to typeset.
+Historically, Greek letters were favored as the notation for an angle:  $\theta$, $\phi$ and so on.  I use these occasionally, but most frequently I use $t$ or both $s$ and $t$, or even $x$.  I prefer them because I feel like $\theta$ takes me a moment longer to process each time I see it than $t$ does.
 
 \begin{center} \includegraphics [scale=0.6] {lim_x_over_sinx} \end{center}
 
@@ -87,5 +91,13 @@ Since the limit is $1$, the inverse approaches the same limit.  We have proved t
 \[  \lim_{x \rightarrow 0} \ \frac{\sin x}{x} = 1  \] 
 
 $\square$
+
+\subsection*{note}
+
+This proof isn't a rigorous one, for reasons that aren't obvious at first:  we're assuming that if $\pi = C/2r$ for a circle, then the area is $A = \pi r^2$.  In fact, the whole problem can be recast in terms of Archimedes' proof that an inscribed polygon has area smaller than a circle, which in turn is smaller than that of a circumscribed polygon.  
+
+See
+
+\url{https://www.youtube.com/playlist?list=PLw3pvR_YJeRcMaubDZvkjayqDJT4Tx47A}
 
 \end{document}
