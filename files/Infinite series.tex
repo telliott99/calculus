@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-Math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 \title{Infinite series}
@@ -80,6 +80,26 @@ Alternatively
 \[  \sum_{n=0}^{\infty} \frac{1}{2^n} \]
 This is the same as before except the first term is $1$ and the sum is
 \[    \frac{1}{(1 - 1/2)} = 2 \]
+
+\subsection*{visualization}
+
+Steven Strogatz gave a nice easy visualization of this result on Twitter:
+
+\url{https://twitter.com/stevenstrogatz/status/1479487955387535362}
+
+Imagine that we are moving on the number-line starting at $0$ and ending at $1$.  We take a series of steps.
+
+The first stopping point is when the distance remaining to $1$ is $r$.  We have moved a distance of $1 - r$ away from the starting point.
+
+Now, we imagine repeating the same operation at each step.  Take the remaining distance and divide it into the two parts, $1-r$ and $r$.  
+
+For the second step the distance that we move is what was left from the previous round, $r$, times $(1-r)$, so $r(1-r)$.  For the third step it is what's left, $r^2$, times $(1-r)$.
+
+We have that
+\[ (1 - r) + r (1-r) + r^2 (1-r) + \dots = 1 \]
+\[ 1 + r + r^2 + \dots = \frac{1}{1 - r} \]
+
+A nice thing about this is that we see graphically why $0 < r < 1$.
 
 \subsection*{Repeating decimals}
 Consider
