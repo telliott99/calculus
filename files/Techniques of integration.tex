@@ -9,7 +9,7 @@
 \usepackage{color}
 \usepackage{hyperref}
 
-\graphicspath{{/Users/telliott/Github/figures/}}
+\graphicspath{{/Users/telliott/Dropbox/Github-math/figures/}}
 % \begin{center} \includegraphics [scale=0.4] {gauss3.png} \end{center}
 
 %break
@@ -291,6 +291,19 @@ It's the other way that we subtract $f(x) - g(x)$:
 \[ = 1 \]
 
 That looks very smooth but it's got a lot of calculus in it!
+
+\subsection*{sine and cosine again}
+
+Let's look again at the sine and cosine curves.  Suppose we want to calculate the area \emph{between} the curves.  To make things easier, start at $\theta = 0$.  Note that we cannot just compute the difference with an upper bound of $\pi/2$, because the curves cross.  
+\begin{center} \includegraphics [scale=0.4] {sine_cosine_wikipedia.png} \end{center}
+Where do they cross?  Well, the value of $\theta$ (in the first quadrant) where the sine and cosine are equal is $\pi/4$.
+
+To get the area under the sine curve we need $\int \sin \theta \ d \theta = - \cos \theta$ and similarly for cosine it's $\int \cos \theta \ d \theta = \sin \theta$.  The area under the sine and cosine curves with these bounds is 
+\[ A_S = -\cos \theta \ \bigg |_0^{\pi/4} = - \ [ \ \frac{1}{\sqrt{2}} - 1 \ ]  \ = 1 - \frac{1}{\sqrt{2}} \]
+\[ A_C = \sin \theta \ \bigg |_0^{\pi/4} = \frac{1}{\sqrt{2}} - 0 = \frac{1}{\sqrt{2}} \]
+The area between the curves is the difference:  $1 - \sqrt{2}$.
+
+The area under each individual curve between $0$ and an upper bound of $\pi/2$ is just $1$, so the difference is zero, which shows the problem in just blindly subtracting one from the other.
 
 \subsection*{a more complicated problem}
 

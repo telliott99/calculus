@@ -56,6 +56,10 @@ Newton wrote the binomial expansion in this way
 \[ (P + PQ)^{m/n} = P^{m/n} + \frac{(m)}{(n)}P^{m/n}Q + \frac{(m)}{(n)}\frac{(m-n)}{(2n)}P^{m/n}Q^2 + \cdots \]
 \[ + \frac{(m)}{(n)}\frac{(m-n)}{(2n)}\frac{(m-2n)}{(3n)}P^{m/n}Q^3 + \cdots \] 
 
+[ Update:  I have another source, a chapter I found on the web written by Betty Bytheway, which says that he really wrote it with the same cofactors but the $P$ and $Q$ parts were
+\[ P^{m/n} + .. AQ + .. BQ + .. CQ + .. DQ \]
+where $A,B,C,D \dots$ are just that portion of the preceeding term. ]
+
 This looks a little strange to modern eyes, but it's actually the same as the standard binomial. 
 
 Notice that we can factor out $P^{m/n}$ so
@@ -68,7 +72,9 @@ Substitute $r$ for $m/n$
 
 This is the binomial with $x = Q$.
 
-One difference is that Newton used it for negative integers and even for a fractional power.  A key change is that in these cases the series becomes infinite.
+One huge difference from the standard binomial is that Newton used it for negative integers and even for a fractional power.  
+
+A key change is that in these cases the series becomes infinite.
 
 \subsection*{usage}
 We can use this to compute roots.  Suppose $Q = 1$ and $r = 1/3$, so we are looking for the cube root of $2$.  The terms of the series are $1 + 1/3 + \dots$
